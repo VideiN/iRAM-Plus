@@ -266,8 +266,10 @@ class LoginViewModel: ObservableObject {
         var sessionSet = false
         var accountSet = false
 
-        logging(text: "Waiting for authentication to complete (10 second timeout)...")
-        while Date().timeIntervalSince(startTime) < 10 {
+        // After the code, StosSign validates it and runs a full sign-in again
+        // (SRP init/complete, apptokens, account), which can take longer than 10s.
+        logging(text: "Waiting for authentication to complete (30 second timeout)...")
+        while Date().timeIntervalSince(startTime) < 30 {
             if DataManager.shared.model.session != nil {
                 sessionSet = true
                 logging(text: "Session is now set")
