@@ -397,7 +397,7 @@ final class AnisetteDataHelper
                 if let clientInfo = json["client_info"] {
                     self.printOut("Server is V3")
                     
-                    self.clientInfo = clientInfo
+                    self.clientInfo = "<Pixel 7> <Android;14;UQ1A.240205.002> <com.apple.AuthKit/1 (com.apple.akd/1.0)>"
                     self.userAgent = json["user_agent"]!
                     self.printOut("Client-Info: \(self.clientInfo!)")
                     self.printOut("User-Agent: \(self.userAgent!)")
