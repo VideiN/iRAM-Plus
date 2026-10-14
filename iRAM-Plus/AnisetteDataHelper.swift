@@ -398,7 +398,8 @@ final class AnisetteDataHelper
                     self.printOut("Server is V3")
                     
                     self.clientInfo = "<Pixel 7> <Android;14;UQ1A.240205.002> <com.apple.AuthKit/1 (com.apple.akd/1.0)>"
-                    self.userAgent = json["user_agent"]!
+                    // Match the Android/akd client info above (same as SideInstaller 1.5.0)
+                    self.userAgent = "akd/1.0 CFNetwork/808.1.4"
                     self.printOut("Client-Info: \(self.clientInfo!)")
                     self.printOut("User-Agent: \(self.userAgent!)")
                     
